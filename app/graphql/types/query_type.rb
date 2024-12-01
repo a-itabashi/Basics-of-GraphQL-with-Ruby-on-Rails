@@ -8,7 +8,7 @@ module Types
     # They will be entry points for queries on your schema.
 
     # TODO: remove me
-    field :test_field, String, null: false, description: "An example field added by the generator" do
+    field :test_field, String, null: false, description: 'An example field added by the generator' do
       argument :name, String, required: true
     end
     def test_field(name:)
@@ -16,7 +16,7 @@ module Types
       "Hello #{name}"
     end
 
-    field :author, Types::AuthorType, null: true, description: "Return one Author instance" do
+    field :author, Types::AuthorType, null: true, description: 'Return one Author instance' do
       argument :id, ID, required: true
     end
     def author(id:)

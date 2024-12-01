@@ -1,5 +1,5 @@
 class Types::AuthorType < Types::BaseObject
-  description "One Author"
+  description 'One Author'
 
   field :id, ID, null: false
   field :first_name, String, null: true
@@ -18,5 +18,4 @@ class Types::AuthorType < Types::BaseObject
   def full_name
     "#{object.first_name} #{object.last_name}"
   end
-
 end
