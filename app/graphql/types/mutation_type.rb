@@ -19,7 +19,7 @@ module Types
 
     field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor
     # 返り値がboolean
-    field :update_author, Boolean, null: false, description: "update an author" do
+    field :update_author, Boolean, null: false, description: 'update an author' do
       argument :author, Types::AuthorInputType, required: true
     end
 
@@ -28,10 +28,9 @@ module Types
       # existing&.update(author.to_h)
       target_author = Author.find(author[:id])
       target_author.update(author.to_h)
-
     end
 
-    field :delete_author, Boolean, null: false, description: "Delete an author" do
+    field :delete_author, Boolean, null: false, description: 'Delete an author' do
       argument :id, ID, required: true
     end
 

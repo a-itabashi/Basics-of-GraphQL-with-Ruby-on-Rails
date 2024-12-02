@@ -1,6 +1,8 @@
-class Types::ErrorType < Types::BaseObject
-  description: "ActiveRecord errors"
+module Types
+  class ErrorType < Types::BaseObject
+    description 'ActiveRecord errors'
 
-  field :field_name, String, null: false
-  field :errors, [String], null: false
+    field :field_name, String, null: false
+    field :errors, [String], null: false
+  end
 end

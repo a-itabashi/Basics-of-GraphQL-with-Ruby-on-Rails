@@ -27,5 +27,21 @@ module Types
     def authors
       Author.all
     end
+
+    field :login, String, null: false, description: 'login a user' do
+      argument :email, String, required: true
+      argument :password, String, required: true
+    end
+    def login(email:, password:)
+      user = User.find_by(email: email)&.authenticate(password)
+      return unless user
+
+      user.sessions.create.key
+    end
+
+    field :current_user, Types::UserType, null: true, description: "The currently logged in user"
+    def current_user
+      context[:current_user]
+    end
   end
 end
